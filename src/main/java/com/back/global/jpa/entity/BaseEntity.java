@@ -19,7 +19,7 @@ public abstract class BaseEntity {
     public String getModelTypeCode() {
         return this.getClass().getSimpleName();
     }
-    public void publishEvent(Object event) {
+    protected void publishEvent(Object event) {
         GlobalConfig.getEventPublisher().publish(event);
     }
 }

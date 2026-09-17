@@ -19,13 +19,13 @@ public class PostDto {
 
     public PostDto(Post post) {
         this(
-                post.getId(),
-                post.getCreateDate(),
-                post.getModifyDate(),
-                post.getAuthor().getId(),
-                post.getAuthor().getNickname(),
-                post.getTitle(),
-                post.getContent()
+            post.getId(),
+            post.getCreateDate(),
+            post.getModifyDate(),
+            post.getAuthor().getId(),
+            post.getAuthor().getNickname(),
+            post.getTitle(),
+            post.getContent()
         );
     }
 }

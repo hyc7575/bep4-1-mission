@@ -19,13 +19,13 @@ public class PostCommentDto {
 
     public PostCommentDto(PostComment postComment) {
         this(
-                postComment.getId(),
-                postComment.getCreateDate(),
-                postComment.getModifyDate(),
-                postComment.getPost().getId(),
-                postComment.getAuthor().getId(),
-                postComment.getAuthor().getNickname(),
-                postComment.getContent()
+            postComment.getId(),
+            postComment.getCreateDate(),
+            postComment.getModifyDate(),
+            postComment.getPost().getId(),
+            postComment.getAuthor().getId(),
+            postComment.getAuthor().getNickname(),
+            postComment.getContent()
         );
     }
 }
