@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "CASH_MEMBER")
+@Table(name="CASH_MEMBER")
 @Getter
 @NoArgsConstructor
 public class CashMember extends ReplicaMember {
