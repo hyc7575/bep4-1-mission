@@ -17,7 +17,6 @@ public class MemberJoinUseCase {
     private final MemberRepository memberRepository;
     private final EventPublisher eventPublisher;
 
-    @Transactional
     public RsData<Member> join(String username, String password, String nickname) {
         memberRepository.findByUsername(username).ifPresent(m -> {
             throw new DomainException("409-1", "이미 존재하는 username 입니다.");
