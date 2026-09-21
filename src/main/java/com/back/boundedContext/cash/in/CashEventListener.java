@@ -23,7 +23,6 @@ public class CashEventListener {
     @TransactionalEventListener(phase = AFTER_COMMIT)
     @Transactional(propagation = REQUIRES_NEW)
     public void handle(MemberJoinedEvent event) {
-        System.out.println("----- log ----- MemberJoinedEvent cash");
         cashFacade.syncMember(event.getMember());
     }
 

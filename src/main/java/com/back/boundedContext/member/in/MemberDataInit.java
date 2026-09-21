@@ -34,7 +34,6 @@ public class MemberDataInit {
 
     @Transactional
     public void makeBaseMembers() {
-        System.out.println("----- log ----- " + memberFacade.count());
         if (memberFacade.count() > 0) return;
 
         Member systemMember = memberFacade.join("system", "1234", "시스템").getData();
