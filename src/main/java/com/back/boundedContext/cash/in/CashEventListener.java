@@ -1,14 +1,11 @@
 package com.back.boundedContext.cash.in;
 
 import com.back.boundedContext.cash.app.CashFacade;
-import com.back.boundedContext.cash.domain.CashMember;
-import com.back.boundedContext.post.app.PostFacade;
 import com.back.shared.cash.event.CashMemberCreatedEvent;
 import com.back.shared.market.event.MarketOrderPaymentRequestedEvent;
 import com.back.shared.member.event.MemberJoinedEvent;
 import com.back.shared.member.event.MemberModifiedEvent;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.event.TransactionalEventListener;
