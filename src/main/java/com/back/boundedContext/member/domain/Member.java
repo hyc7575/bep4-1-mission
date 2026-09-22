@@ -9,6 +9,8 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name="MEMBER_MEMBER")
 @NoArgsConstructor
@@ -22,9 +24,20 @@ public class Member extends SourceMember {
         if (amount == 0) return getActivityScore();
         setActivityScore(getActivityScore() + amount);
         publishEvent(
-            new MemberModifiedEvent(new MemberDto(this))
+            new MemberModifiedEvent(this.toDto())
         );
 
         return getActivityScore();
+    }
+
+    public MemberDto toDto() {
+        return new MemberDto(
+            getId(),
+            getCreateDate(),
+            getModifyDate(),
+            getUsername(),
+            getNickname(),
+            getActivityScore()
+        );
     }
 }
