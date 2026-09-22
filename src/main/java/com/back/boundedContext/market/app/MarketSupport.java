@@ -10,7 +10,6 @@ import com.back.boundedContext.market.out.OrderRepository;
 import com.back.boundedContext.market.out.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 

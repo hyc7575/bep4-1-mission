@@ -2,21 +2,16 @@ package com.back.boundedContext.cash.app;
 
 import com.back.boundedContext.cash.domain.CashLog;
 import com.back.boundedContext.cash.domain.Wallet;
-import com.back.boundedContext.cash.out.CashMemberRepository;
-import com.back.boundedContext.cash.out.WalletRepository;
 import com.back.global.eventPublisher.EventPublisher;
 import com.back.shared.cash.event.CashOrderPaymentFailedEvent;
 import com.back.shared.cash.event.CashOrderPaymentSucceededEvent;
 import com.back.shared.market.dto.OrderDto;
-import com.back.shared.market.event.MarketOrderPaymentRequestedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class CashCompleteOrderPaymentUseCase {
-    private final CashMemberRepository cashMemberRepository;
-    private final WalletRepository walletRepository;
     private final CashSupport cashSupport;
     private final EventPublisher eventPublisher;
 
