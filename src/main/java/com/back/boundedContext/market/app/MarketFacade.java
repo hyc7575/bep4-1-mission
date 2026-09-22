@@ -98,10 +98,10 @@ public class MarketFacade {
         return marketSupport.findOrderById(id);
     }
 
-    public void handle(CashOrderPaymentSucceededEvent event) {
-        marketCompleteOrderPaymentUseCase.handle(event);
+    public void completeOrderPayment(int orderId) {
+        marketCompleteOrderPaymentUseCase.completePayment(orderId);
     }
-    public void handle(CashOrderPaymentFailedEvent event) {
-        marketCancelOrderRequestPaymentUseCase.handle(event);
+    public void cancelOrderRequestPayment(int orderId) {
+        marketCancelOrderRequestPaymentUseCase.cancelRequestPayment(orderId);
     }
 }
