@@ -2,6 +2,7 @@ package com.back.boundedContext.payout.in;
 
 import com.back.boundedContext.payout.app.PayoutFacade;
 import com.back.boundedContext.payout.app.PayoutPolicy;
+import com.back.global.rsData.RsData;
 import com.back.standard.ut.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.job.Job;
@@ -51,6 +52,7 @@ public class PayoutDataInit {
 			self.forceMakePayoutReadyCandidatesItems();
 			self.collectPayoutItemsMore();
 			self.runCollectPayoutItemsBatchJob();
+			self.completePayoutsMore();
 		};
 	}
 
@@ -89,5 +91,13 @@ public class PayoutDataInit {
 		} catch (JobRestartException e) {
 			log.error("job restart exception", e);
 		}
+	}
+
+
+	@Transactional
+	public void completePayoutsMore() {
+		payoutFacade.completePayoutsMore(4);
+		payoutFacade.completePayoutsMore(2);
+		payoutFacade.completePayoutsMore(2);
 	}
 }
